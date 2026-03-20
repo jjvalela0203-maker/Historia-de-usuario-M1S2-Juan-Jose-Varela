@@ -1,4 +1,14 @@
+"""
+Módulo principal del sistema de gestión de inventario.
 
+Este módulo controla el flujo de ejecución del programa mediante
+un menú interactivo. Permite al usuario agregar productos, mostrar
+el inventario y calcular estadísticas, utilizando funciones de
+otros módulos.
+
+El programa se ejecuta de forma continua hasta que el usuario
+selecciona la opción de salida.
+"""
 from validaciones import pedir_opcion_menu
 import modulo_estadisticas
 import modulo_inventario
