@@ -1,4 +1,4 @@
-# 📦 Inventory Management System (Python)
+# User History M1S2 📦 Inventory Management System (Python)
 
 ## 📌 Overview
 
@@ -121,6 +121,6 @@ The goal of this project was to practice control structures and data handling in
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Author: Juan Jose Varela
 
 Developed as part of a programming practice assignment.
