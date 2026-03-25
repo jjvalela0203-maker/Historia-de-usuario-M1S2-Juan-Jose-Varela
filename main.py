@@ -1,40 +1,59 @@
 """
-Módulo principal del sistema de gestión de inventario.
+Main module of the inventory management system.
 
-Este módulo controla el flujo de ejecución del programa mediante
-un menú interactivo. Permite al usuario agregar productos, mostrar
-el inventario y calcular estadísticas, utilizando funciones de
-otros módulos.
+This module controls the program's execution flow through
+an interactive menu. It allows the user to add products,
+display the inventory, and calculate statistics using
+functions from other modules.
 
-El programa se ejecuta de forma continua hasta que el usuario
-selecciona la opción de salida.
+The program runs continuously until the user selects
+the exit option.
 """
-from validaciones import pedir_opcion_menu
-import modulo_estadisticas
-import modulo_inventario
+
+# Import function to validate and get the menu option from the user
+from validations import get_menu_option
+
+# Import modules for inventory management and statistics
+import statistics_module
+import inventory_module
 
 
 def menu():
-    """Muestra el menú principal y controla el flujo del programa."""
+    """
+    Displays the main menu and controls the program flow.
+    """
     while True:
+        # Print menu header
         print("=" * 15, "MENU", "=" * 15)
-        print("1) Agregar producto")
-        print("2) Mostrar inventario")
-        print("3) Calcular estadisticas")
-        print("4) Salir")
 
-        opcion = pedir_opcion_menu()
+        # Display available options
+        print("1) Add product")
+        print("2) Show inventory")
+        print("3) Calculate statistics")
+        print("4) Exit")
 
-        if opcion == 1:
-            modulo_inventario.agregar_producto()
-        elif opcion == 2:
-            modulo_inventario.mostrar_inventario()
-        elif opcion == 3:
-            modulo_estadisticas.calcular_estadisticas()
-        elif opcion == 4:
-            print("Saliendo del programa...")
+        # Get user option with validation
+        option = get_menu_option()
+
+        # Execute the selected option
+        if option == 1:
+            # Call function to add a new product
+            inventory_module.add_product()
+
+        elif option == 2:
+            # Call function to display the inventory
+            inventory_module.show_inventory()
+
+        elif option == 3:
+            # Call function to calculate inventory statistics
+            statistics_module.calculate_statistics()
+
+        elif option == 4:
+            # Exit the program
+            print("Exiting the program...")
             break
 
 
+# Entry point of the program
 if __name__ == "__main__":
     menu()
